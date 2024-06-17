@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name'
+    ];
+
+    public function careers()
+    {
+        return $this->hasMany(Career::class);
+    }
 }

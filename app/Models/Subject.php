@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'career_id'
+    ];
+
+    public function career()
+    {
+        return $this->belongsTo(Career::class);
+    }
 }
