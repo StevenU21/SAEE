@@ -27,6 +27,9 @@ return new class extends Migration
 
             $table->integer('municipality_id')->unsigned();
             $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('career_id')->unsigned();
+            $table->foreign('career_id')->references('id')->on('careers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

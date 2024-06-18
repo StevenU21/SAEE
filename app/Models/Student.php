@@ -17,6 +17,7 @@ class Student extends Model
         'state',
         'favorite_subject',
         'average',
+        'career_id'
     ];
 
     //relacion con sexos
@@ -29,5 +30,11 @@ class Student extends Model
     public function municipality()
     {
         return $this->belongsTo(Municipality::class);
+    }
+
+    //relacion con carreras
+    public function career()
+    {
+        return $this->belongsTo(Career::class);
     }
 }
